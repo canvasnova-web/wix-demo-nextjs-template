@@ -11,10 +11,9 @@ const LoginComp = () => {
   return (
     <button
       onClick={onLoginClick}
-      className="flex relative min-w-[72px] gap-1 font-roboto font-normal items-center"
+      className="text-[clamp(12px,1.0vw,14px)] font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1 py-1"
     >
-      <User size={24} stroke="currentColor" />
-      Log In
+      Konto
     </button>
   );
 };

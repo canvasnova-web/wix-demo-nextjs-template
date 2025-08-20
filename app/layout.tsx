@@ -8,6 +8,22 @@ import { Metadata } from "next";
 import { LayoutProvider } from "@/app/components/LayoutProvider/LayoutProvider";
 import NextTopLoader from "nextjs-toploader";
 
+import { Inter, Syne } from "next/font/google"
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-syne",
+})
+
 export const metadata: Metadata = {
   title: {
     default: "Create Wix Demo Site",
@@ -25,7 +41,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${syne.variable}`}>
+    {/*
+    <style>
+      {`
+        html {
+          font-family: ${inter.style.fontFamily};
+          --font-inter: ${inter.variable};
+          --font-syne: ${syne.variable};
+        }
+      `}
+    </style>
+    */}
     <body className="bg-site">
     <link rel="icon" href="https://www.wix.com/favicon.ico" />
     {process.env.NEXT_PUBLIC_WIX_CLIENT_ID ? (

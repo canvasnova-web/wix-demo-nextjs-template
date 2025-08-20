@@ -16,10 +16,10 @@ import {
 } from "@/app/routes";
 
 export const navbarMainItems = [
-  { ref: BLOGS_ROUTE, label: "Blog" },
-  { ref: STORE_ROUTE, label: "Store" },
-  { ref: EVENTS_ROUTE, label: "Events" },
-  { ref: WORKSHOPS_ROUTE, label: "Workshops" },
+  { ref: BLOGS_ROUTE, label: "Prozess" },
+  { ref: STORE_ROUTE, label: "Materialien" },
+  { ref: EVENTS_ROUTE, label: "Galerie" },
+  { ref: WORKSHOPS_ROUTE, label: "FAQ" },
 ];
 
 const StyledNavLink = ({
@@ -72,17 +72,18 @@ export function NavBar() {
 
   return (
     <div>
-      <nav className="py-4 justify-between items-center bg-white flex">
-        <div className="lg:hidden">
+      <nav className="py-0 h-[56px] justify-between items-center flex">
+        <div className="max-[1023px]:flex hidden h-[56px] items-center">
           <button
             onClick={toggleMenu}
-            className="relative navbar-burger flex items-center rounded-md focus:outline-none"
+            className="navbar-burger flex items-center justify-center w-13 h-13 rounded-[10px] bg-white focus:outline-none leading-none p-0 overflow-hidden shadow-none -ml-2"
+            style={{ lineHeight: 0, padding: 0, overflow: "hidden", boxShadow: "none" }}
             aria-controls="primary-navigation"
           >
             <svg
-              stroke="var(--button-color)"
+              stroke="currentColor"
               fill="none"
-              className="hamburger w-12 h-12"
+              className="hamburger w-10 h-10 block"
               viewBox="-10 -10 120 120"
             >
               <path
@@ -95,11 +96,11 @@ export function NavBar() {
             </svg>
           </button>
         </div>
-        <ul className="lg:flex items-center gap-4 justify-end hidden">
+        <ul className="hidden min-[1024px]:flex gap-[clamp(1px,0.3vw,10px)]">
           {navbarMainItems.map(({ ref, label }) => (
             <li key={ref} className="relative pl-4">
               <StyledNavLink
-                className="text-[18px] font-bold"
+                className="text-[clamp(9px,0.9vw,12px)] font-medium underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1 py-1"
                 isActive={ref === linkRef}
                 href={ref}
                 onClick={() => {
@@ -113,16 +114,16 @@ export function NavBar() {
         </ul>
       </nav>
 
-      <div className={`relative z-50 ${isMenuOpen ? "visible" : "invisible"}`}>
+      <div className={`fixed inset-0 z-50 ${isMenuOpen ? "visible" : "invisible"}`}>
         <nav
-          className={`fixed top-0 bottom-0 flex flex-col w-screen py-6 px-6 bg-white border-r overflow-y-auto
+          className={`absolute top-0 bottom-0 left-0 right-0 py-6 px-6 bg-white overflow-y-auto transition-all duration-700 ease-in-out
                     ${
                       isMenuOpen
                         ? "left-0 opacity-100"
                         : "left-[100vw] opacity-0"
                     } transition-all ease-in-out duration-700`}
         >
-          <ul className="my-10 flex flex-col items-center gap-8 justify-end">
+          <ul className="my-10 flex flex-col items-center gap-8">
             <li key={HOME_ROUTE} className="relative">
               <StyledNavLink
                 className="text-2xl font-bold"
@@ -138,7 +139,7 @@ export function NavBar() {
             {navbarMainItems.map(({ ref, label }) => (
               <li key={ref} className="relative">
                 <StyledNavLink
-                  className="text-2xl font-bold"
+                  className="text-2xl font-bold font_9"
                   isActive={ref === linkRef}
                   href={ref}
                   onClick={() => {

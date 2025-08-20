@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700&display=swap');*/
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,8 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 0, 0, 0;
-  --font_global: normal normal normal 16px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
+  /*--font_global: "Inter var", sans-serif;
+  --font-syne: "Syne", serif;
   --font_1: normal normal normal 16px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
   --font_2: normal normal normal 47px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
   --font_3: normal normal normal 55px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
@@ -17,7 +18,7 @@
   --font_5: normal normal normal 24px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
   --font_6: normal normal bold 20px/1.4em nimbus-sans-tw01con, nimbus-sans-tw05con, sans-serif;
   --font_7: normal normal normal 17px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
-  --font_8: normal normal normal 15px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+  --font_8: normal normal normal 15px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;*/
   --text-color: 47, 46, 46;
   --lnw1: 3px;
   --brd: 47, 46, 46;
@@ -27,10 +28,10 @@
   --dst: 5px;
 }
 
-/* Mobile Styles */
+/* Mobile Styles 
 @media only screen and (max-width: 768px) {
   :root {
-    --font_global: normal normal normal 12px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
+    --font_global: "Inter var", sans-serif;
     --font_1: normal normal normal 12px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
     --font_2: normal normal normal 28px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
     --font_3: normal normal normal 36px/1.4em georgia, palatino, 'book antiqua', 'palatino linotype', serif;
@@ -40,7 +41,7 @@
     --font_7: normal normal normal 12px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
     --font_8: normal normal normal 11px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
   }
-}
+}*/
 
 
 body {
@@ -53,7 +54,7 @@ body {
     transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s, border-color .4s ease 0s, background-color .4s ease 0s;
     color: rgb(var(--text-color));
     border-color: rgb(var(--brd));
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
     @apply text-sm;
     @apply font-medium;
     @apply bg-transparent;
@@ -91,6 +92,14 @@ body {
     font-family: Helvetica-W01-Light, sans-serif;
   }
 
+  .font-inter {
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+  }
+
+  .font-syne {
+    font-family: var(--font-syne), var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+  }
+
   h1, .title {
     @apply text-5xl;
   }
@@ -124,7 +133,8 @@ body {
   }
 
   .card-title {
-    @apply font-bold text-xl mb-2 hover:text-gray-700 text-left w-full my-7;
+    @apply text-xl mb-2 hover:text-gray-700 text-left w-full my-7;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
   }
 
   .card-subtitle {
@@ -143,7 +153,22 @@ body {
   font: var(--font_global);
 }
 
-h1 {
+html, body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+  color: rgb(var(--text-color));
+  background: rgb(var(--background-rgb));
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-syne), var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+  /* optional: setze gewünschte Headline-Gewichte hier oder per Tailwind */
+  font-weight: 600;
+}
+
+/*h1 {
   font: var(--font_1);
 }
 
@@ -161,7 +186,7 @@ h4 {
 
 h5 {
   font: var(--font_5);
-}
+}*/
 
 a {
   color: inherit;
@@ -204,4 +229,45 @@ input[type=number] {
 ._4-MIc svg {
   stroke: #E0E0E0;
   stroke-width: 2px;
+}
+
+.thumbs-outer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.thumbs-inner {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+}
+
+.thumbs-inner::-webkit-scrollbar:horizontal {
+  height: 0 !important;
+}
+
+.thumbs-inner::-webkit-scrollbar-thumb:horizontal,
+.thumbs-inner::-webkit-scrollbar-track:horizontal {
+  background: transparent !important;
+}
+
+@layer utilities {
+  /* Baseline: gut für Smartphone & Desktop */
+  .container-x {
+    @apply px-[clamp(16px,4vw,40px)];
+  }
+
+  /* Tablet-Boost: nur hier etwas mehr Abstand geben */
+  @screen md {
+    .container-x--tablet {
+      @apply px-[clamp(20px,5vw,48px)];
+    }
+  }
 }

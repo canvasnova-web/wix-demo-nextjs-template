@@ -1,19 +1,15 @@
 import Link from "next/link";
 import { HOME_ROUTE } from "@/app/routes";
+import Image from "next/image";
 
 const Logo = () => (
   <Link
     href={HOME_ROUTE}
-    className="flex md:justify-start md:items-center gap-2 md:px-8 max-md:pt-6"
+    className="flex items-center justify-center md:justify-start md:items-center gap-2 px-4 md:px-10 lg:px-0"
   >
     <div className="relative">
-      <span className="absolute md:right-[25%] md:bottom-[75%] max-md:left-1/2 max-md:-top-1/2 italic">
-        Chef
-      </span>
+      <Image src="/images/logo_klein.png" alt="Canvas Nova" width={604} height={108} className="block w-[clamp(170px,14vw,220px)] h-auto max-h-[clamp(30px,2.5vw,39px)]" />
     </div>
-    <h5 className="relative text-custom-3 italic font-bold text-[24px]">
-      <span className="text-3xl italic font-bold">M</span>ichael Bolan<u>o</u>
-    </h5>
   </Link>
 );
 

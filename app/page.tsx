@@ -57,7 +57,6 @@ export default function Home() {
                 bg-[url('/images/resturant-table.jpeg')]
                 bg-cover bg-no-repeat md:bg-fixed bg-top"
       />
-      <BlogSection />
       <ServiceForm />
       <HomeGallery images={galleryImages} />
     </main>

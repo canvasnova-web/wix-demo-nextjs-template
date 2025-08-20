@@ -15,7 +15,7 @@ export const CartBag = () => {
       className="flex relative"
       aria-label={`Cart items: ${itemsCount}`}
     >
-      <Order size="24" stroke={"currentColor"} />
+      <Order size="32" stroke={"currentColor"} />
       {itemsCount! > 0 && (
         <span className="font-bold text-xs  absolute top-[13px] right-[15px]">
           {itemsCount}

@@ -23,9 +23,8 @@ const config: Config = {
         18: "18px",
       },
       fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
-        libre: ["Libre Baskerville", "serif"],
-        madefor: ["Wix Madefor Display", "sans-serif"],
+        sans: ["var(--font-inter)"],
+        heading: ["var(--font-syne)", "var(--font-inter)"],
       },
       keyframes: {
         fade: {

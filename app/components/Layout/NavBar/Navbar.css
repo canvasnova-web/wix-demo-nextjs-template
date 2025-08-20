@@ -1,6 +1,6 @@
 .navbar-burger {
     --button-color: black;
-    border: black solid 1px;
+    border: none;
     overflow: hidden;
     z-index: 51;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
@@ -11,7 +11,7 @@
 }
 
 .navbar-burger .hamburger {
-    transition: all 1s;
+    transition: transform .3s ease;
 }
 
 .navbar-burger.extended .hamburger {
@@ -20,6 +20,7 @@
 }
 
 .navbar-burger .line {
+    stroke-width: 6.8;
     transition: 1s;
     stroke-dasharray: 60 31 60 300;
 }

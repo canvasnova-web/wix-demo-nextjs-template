@@ -27,7 +27,6 @@ const CollectionCard: React.FC<{
       <div className="h-[348px] w-full">
         <WixMediaImage
           disableZoom
-          media={item.media.mainMedia.image.url}
           width={600}
           height={800}
           objectFit="cover"
